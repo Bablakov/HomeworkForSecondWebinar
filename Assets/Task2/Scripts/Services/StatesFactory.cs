@@ -1,7 +1,7 @@
 ﻿using Task2.Interfaces;
 using Zenject;
 
-namespace Assets.Task2.Scripts.StateMachine
+namespace Task2.Services
 {
     public class StatesFactory
     {

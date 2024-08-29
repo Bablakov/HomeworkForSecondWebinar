@@ -6,10 +6,7 @@ namespace Task2.StateMachine
     [Serializable]
     public class NPCStateMachineData
     {
-        public float Speed;
-        public float WorkingTime;
-        public float RestingTime;
-        public Transform transformTargetWork;
-        public Transform TransformTargetHome;
+        [field: SerializeField] public Transform TransformTargetWork { get; private set; }
+        [field: SerializeField] public Transform TransformTargetHome { get; private set; }
     }
 }

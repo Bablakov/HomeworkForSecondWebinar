@@ -1,20 +1,18 @@
-﻿using Assets.Task2.Scripts.StateMachine;
-using Task2.NPC;
-using Task2.StateMachine;
+﻿using Task2.StateMachine;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Task2.Scripts.Services
+namespace Task2.Services
 {
     public class GameInstaller : MonoInstaller
     {
-        [SerializeField] private NPC _npc;
+        [SerializeField] private NPC.NPC _npc;
         [SerializeField] private NPCStateMachineData _npcStateMachineData;
 
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<NPCStateMachineData>().FromInstance(_npcStateMachineData);
-            Container.BindInterfacesAndSelfTo<NPC>().FromInstance(_npc);
+            Container.BindInterfacesAndSelfTo<NPC.NPC>().FromInstance(_npc);
             Container.BindInterfacesAndSelfTo<NPCStateMachine>().AsSingle();
             Container.BindInterfacesAndSelfTo<StatesFactory>().AsSingle();
         }
