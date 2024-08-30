@@ -1,8 +1,7 @@
 namespace Task2.Interfaces
 {
-    public interface IStateSwitcher
+    public interface IStateSwitcher<TState>
     {
-        public void SwitchState<TState>() where TState : IState;
-        public void RegistrateState<TState>(TState state) where TState : IState;
+        public void SwitchState<State>() where State : TState;
     }
 }

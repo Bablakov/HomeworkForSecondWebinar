@@ -1,4 +1,4 @@
-﻿using Task2.StateMachine;
+﻿using Task2.NPC.StateMachine;
 using UnityEngine;
 using Zenject;
 
@@ -11,10 +11,22 @@ namespace Task2.Services
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<NPCStateMachineData>().FromInstance(_npcStateMachineData);
-            Container.BindInterfacesAndSelfTo<NPC.NPC>().FromInstance(_npc);
-            Container.BindInterfacesAndSelfTo<NPCStateMachine>().AsSingle();
-            Container.BindInterfacesAndSelfTo<StatesFactory>().AsSingle();
+            BindStateMachineData();
+            BindNPC();
+            BindStateMachine();
+            BindStatesFactory();
         }
+
+        private void BindStateMachineData() =>
+            Container.BindInterfacesAndSelfTo<NPCStateMachineData>().FromInstance(_npcStateMachineData);
+
+        private void BindNPC() =>
+            Container.BindInterfacesAndSelfTo<NPC.NPC>().FromInstance(_npc);
+
+        private void BindStateMachine() =>
+            Container.BindInterfacesAndSelfTo<NPCStateMachine>().AsSingle();
+
+        private void BindStatesFactory() =>
+            Container.BindInterfacesAndSelfTo<StatesFactory>().AsSingle();
     }
 }

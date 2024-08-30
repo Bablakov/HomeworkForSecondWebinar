@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Task2.Config
+namespace Task2.NPC.Config
 {
     [Serializable]
     public class ActionStateConfig

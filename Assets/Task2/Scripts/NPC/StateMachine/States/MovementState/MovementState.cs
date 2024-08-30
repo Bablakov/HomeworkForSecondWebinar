@@ -1,7 +1,5 @@
-﻿using Task2.Config;
-using Task2.Interfaces;
+﻿using Task2.Interfaces;
 using Task2.NPC.Config;
-using Task2.StateMachine;
 using UnityEngine;
 
 namespace Task2.NPC.StateMachine.States.MovementState
@@ -13,7 +11,7 @@ namespace Task2.NPC.StateMachine.States.MovementState
 
         private IMovable _movable;
 
-        public MovementState(IStateSwitcher stateSwitcher, NPCStateMachineData npcStateMachineData, IMovable movable, NPCConfig npcConfig)
+        public MovementState(IStateSwitcher<NPCState> stateSwitcher, NPCStateMachineData npcStateMachineData, IMovable movable, NPCConfig npcConfig)
             : base(stateSwitcher)
         {
             _movable = movable;

@@ -7,7 +7,7 @@ namespace Task2.NPC.StateMachine.States.ActionState
 {
     public class WorkingState : ActionState
     {
-        public WorkingState(IStateSwitcher stateSwitcher, NPCConfig npcConfig) 
+        public WorkingState(IStateSwitcher<NPCState> stateSwitcher, NPCConfig npcConfig) 
             : base(stateSwitcher, npcConfig)
         { }
 
@@ -15,11 +15,13 @@ namespace Task2.NPC.StateMachine.States.ActionState
 
         public override void Enter()
         {
+            base.Enter();
             Debug.Log("Начинаю работать");
         }
 
         public override void Exit()
         {
+            base.Exit();
             Debug.Log("Закончил работать");
         }
 

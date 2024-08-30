@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: NPCConfig
   m_EditorClassIdentifier: 
   <ActionStateConfig>k__BackingField:
-    <WorkingTime>k__BackingField: 10
-    <SleepingTime>k__BackingField: 10
+    <WorkingTime>k__BackingField: 2.5
+    <SleepingTime>k__BackingField: 2
   <MovementStateConfig>k__BackingField:
-    <SpeedGoingHome>k__BackingField: 5
-    <SpeedGoingWork>k__BackingField: 3
-    <FinishingDistance>k__BackingField: 0.1
+    <SpeedGoingHome>k__BackingField: 7.55
+    <SpeedGoingWork>k__BackingField: 8.09
+    <FinishingDistance>k__BackingField: 0.123

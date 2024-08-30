@@ -1,8 +1,8 @@
 ﻿using Zenject;
 using UnityEngine;
-using Task2.StateMachine;
 using Task2.NPC.StateMachine.States.MovementState;
 using Task2.NPC.StateMachine.States.ActionState;
+using Task2.NPC.StateMachine;
 
 namespace Task2.Services
 {
@@ -20,12 +20,19 @@ namespace Task2.Services
 
         private void Awake()
         {
+            RegistrateNPCStates();
+            SwitchStartState();
+        }
+
+        private void RegistrateNPCStates()
+        {
             _stateSwitcher.RegistrateState(_statesFactory.Create<GoingHomeState>());
             _stateSwitcher.RegistrateState(_statesFactory.Create<GoingWorkState>());
             _stateSwitcher.RegistrateState(_statesFactory.Create<SleepingState>());
             _stateSwitcher.RegistrateState(_statesFactory.Create<WorkingState>());
-            
-            _stateSwitcher.SwitchState<GoingWorkState>();
         }
+
+        private void SwitchStartState() =>
+            _stateSwitcher.SwitchState<GoingWorkState>();
     }
 }

@@ -1,5 +1,4 @@
-﻿using Task2.Config;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Task2.NPC.Config
 {

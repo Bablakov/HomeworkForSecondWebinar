@@ -1,7 +1,5 @@
-﻿using Task2.Config;
-using Task2.Interfaces;
+﻿using Task2.Interfaces;
 using Task2.NPC.Config;
-using Task2.StateMachine;
 using UnityEngine;
 
 namespace Task2.NPC.StateMachine.States.ActionState
@@ -12,17 +10,19 @@ namespace Task2.NPC.StateMachine.States.ActionState
 
         private float _timeAction;
 
-        public ActionState(IStateSwitcher stateSwitcher, NPCConfig npcConfig)
+        public ActionState(IStateSwitcher<NPCState> stateSwitcher, NPCConfig npcConfig)
             : base(stateSwitcher) => ActionStateConfig = npcConfig.ActionStateConfig;
 
         protected abstract float TimeAction { get; }
 
         public override void Enter()
         {
+            ResetTimer();
         }
 
         public override void Exit()
-        {}
+        {
+        }
 
         public override void Update()
         {
@@ -36,5 +36,10 @@ namespace Task2.NPC.StateMachine.States.ActionState
         protected override void EndState() => EndTime();
 
         protected abstract void EndTime();
+
+        private void ResetTimer()
+        {
+            _timeAction = 0;
+        }
     }
 }

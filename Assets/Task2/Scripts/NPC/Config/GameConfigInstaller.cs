@@ -1,8 +1,7 @@
-﻿using Task2.NPC.Config;
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
 
-namespace Task2.Config
+namespace Task2.NPC.Config
 {
     [CreateAssetMenu(fileName = "GameConfigInstaller", menuName = "Configs/GameConfigInstaller")]
     public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller>

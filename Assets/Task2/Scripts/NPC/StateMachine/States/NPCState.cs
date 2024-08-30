@@ -1,12 +1,12 @@
 ﻿using Task2.Interfaces;
 
-namespace Task2.StateMachine
+namespace Task2.NPC.StateMachine.States
 {
     public abstract class NPCState : IState
     {
-        protected readonly IStateSwitcher StateSwitcher;
+        protected readonly IStateSwitcher<NPCState> StateSwitcher;
 
-        public NPCState(IStateSwitcher stateSwitcher)
+        public NPCState(IStateSwitcher<NPCState> stateSwitcher)
         {
             StateSwitcher = stateSwitcher;
         }
